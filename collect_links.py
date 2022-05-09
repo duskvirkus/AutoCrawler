@@ -107,7 +107,7 @@ class CollectLinks:
         return list(dict.fromkeys(_list))
 
     def google(self, keyword, add_url=""):
-        self.browser.get("https://www.google.com/search?q={}&source=lnms&tbm=isch{}".format(keyword, add_url))
+        self.browser.get("https://www.google.com/search?q={}&source=lnms&tbm=isch{}&tbs=ic:trans".format(keyword, add_url))
 
         time.sleep(1)
 
@@ -200,7 +200,7 @@ class CollectLinks:
     def google_full(self, keyword, add_url=""):
         print('[Full Resolution Mode]')
 
-        self.browser.get("https://www.google.com/search?q={}&tbm=isch{}".format(keyword, add_url))
+        self.browser.get("https://www.google.com/search?q={}&tbm=isch{}&tbs=ic:trans".format(keyword, add_url))
         time.sleep(1)
 
         elem = self.browser.find_element_by_tag_name("body")
